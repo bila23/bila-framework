@@ -10,7 +10,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
-        <java.ee.version>8.0</java.ee.version>
+        <java.ee.version>7.0</java.ee.version>
         <jasper.reports.version>6.8.1</jasper.reports.version>
         <jasper.reports.fonts.version>6.8.1</jasper.reports.fonts.version>
         <inceptionYear>2019</inceptionYear>
@@ -46,6 +46,7 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${java.ee.version}</version>
+            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <groupId>com.sun.mail</groupId>
