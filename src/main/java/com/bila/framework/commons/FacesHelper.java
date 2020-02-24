@@ -26,6 +26,15 @@ import javax.servlet.http.HttpServletResponse;
 public class FacesHelper {
 
     private static ResourceBundle rb;
+
+    /**
+     * Presenta un mensaje de error al usuario
+     * @param msg texto del mensaje
+     */
+    public static void errorMessage(String msg) {
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, null, msg);
+        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+    }
     
     /**
      * Presenta un mensaje de error al usuario
@@ -76,6 +85,15 @@ public class FacesHelper {
      */
     public static void warningMessage(String title, String msg) {
         FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, title, msg);
+        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+    }
+    
+    /**
+     * Presenta un mensaje de advertencia al usuario
+     * @param msg texto del mensaje
+     */
+    public static void warningMessage(String msg) {
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, null, msg);
         FacesContext.getCurrentInstance().addMessage(null, facesMsg);
     }
     
@@ -178,7 +196,7 @@ public class FacesHelper {
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         Principal principal = request.getUserPrincipal();
         if(principal == null) return null;
-        return principal.getName().toUpperCase();
+        return principal.getName();
     }
     
     /**
