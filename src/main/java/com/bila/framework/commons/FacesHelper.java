@@ -66,6 +66,33 @@ public class FacesHelper {
         FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, title, msg);
         FacesContext.getCurrentInstance().addMessage(null, facesMsg);
     }
+    
+    /**
+     * Presenta un mensaje de exito
+     * @param msg objeto de tipo String con el mensaje de exito
+     */
+    public static void success(String msg) {
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Exito", msg);
+        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+    }
+    
+    /**
+     * Presenta un mensaje de advertencia
+     * @param msg objeto de tipo String con el mensaje de texto
+     */
+    public static void warning(String msg) {
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Advertencia", msg);
+        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+    }
+    
+    /**
+     * Presenta un mensaje de error
+     * @param msg objeto de tipo String con el mensaje de texto
+     */
+    public static void error(String msg) {
+        FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", msg);
+        FacesContext.getCurrentInstance().addMessage(null, facesMsg);
+    }
 
     /**
      * Presenta un mensaje de exito al usuario definiendo el componente donde debe mostrarse
